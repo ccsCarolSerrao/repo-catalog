@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "lib": ["es2020"],
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "declaration": false,
+        "esModuleInterop": true,
+        "inlineSourceMap": true,
+        "strict": true,
+        "noLib": false,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": false,
+        "inlineSources": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "strictPropertyInitialization": false,
+        "removeComments": true,
+        "baseUrl": ".",
+        "outDir": "./dist/",
+        "paths": {
+            "@mocks/*": ["__mocks__/*"],
+            "@tests/*": ["__tests__/*"],
+            "@shared/*": ["src/shared/*"],
+            "@github/*": ["src/github/*"],
+            "@catalog/*": ["src/catalog/*"],
+            "@report/*": ["src/report/*"]
+        },
+        "typeRoots": ["./node_modules/@types", "./src/typings"]
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist", "__tests__/**/*", "__mocks__/**/*"]
+}

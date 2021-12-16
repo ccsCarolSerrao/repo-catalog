@@ -1,0 +1,38 @@
+{
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\" \"__mocks__/**/*.ts\"",
+        "lint": "eslint \"{src,__test__,__mocks__}/**/*.ts\"",
+        "lint:fix": "eslint \"{src,__tests__,__mocks__}/**/*.ts\" --fix",
+        "build": "nest build --path \"tsconfig.json\"",
+        "start": "nest start --path \"tsconfig.json\"",
+        "start:dev": "yarn start --watch",
+        "start:debug": "yarn start:dev --debug"
+    },
+    "devDependencies": {
+        "@nestjs/cli": "^8.1.5",
+        "@nestjs/common": "^8.2.3",
+        "@nestjs/config": "^1.1.5",
+        "@nestjs/core": "^8.2.3",
+        "@nestjs/platform-express": "^8.2.3",
+        "@typescript-eslint/eslint-plugin": "^5.5.0",
+        "eslint": "^8.3.0",
+        "jest": "^27.4.3",
+        "prettier": "^2.5.0",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.2"
+    },
+    "dependencies": {
+        "@octokit/request-error": "^2.1.0",
+        "@octokit/rest": "^18.12.0",
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.13.2",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "helmet": "^4.6.0",
+        "js-yaml": "^4.1.0",
+        "reflect-metadata": "^0.1.13",
+        "yaml": "^1.10.2"
+    }
+}
