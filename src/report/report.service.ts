@@ -11,14 +11,14 @@ const MULTIPLIER = 2;
 
 @Injectable()
 export class ReportService {
-    constructor(private readonly _catalogService: CatalogService) {}
+    constructor(private readonly _catalogService: CatalogService) { }
 
     async getReportByTeam(teamSlug: string, reportRequest: ReportRequest) {
         let reportResponse = {} as ReportResponse;
         let factorScore: FactorScoreResponse = {};
         let repoScore: RepoScoreResponse = {};
 
-        const catalogs = await this._catalogService.getCatalogByTeam(teamSlug, reportRequest, reportRequest.onlyWithCatalog);
+        const catalogs = await this.getCatalogToReport(teamSlug, reportRequest);
         const totalRepo = catalogs.length;
         const totalFactor = Object.keys(MaturityLevelFactor).length;
 
@@ -52,6 +52,16 @@ export class ReportService {
         return reportResponse;
     }
 
+    private async getCatalogToReport(teamSlug: string, reportRequest: ReportRequest) {
+        const catalogs = await this._catalogService.getCatalogByTeam(teamSlug, reportRequest, reportRequest.onlyWithCatalog);
+
+        if (!reportRequest.onlyWithCatalog) {
+            return catalogs;
+        }
+
+        return catalogs.filter(x => x.catalog?.maturityLevel.report);
+    }
+
     private buildTotalRepoScore(repoScore: number, totalFactor: number) {
         repoScore /= totalFactor * MULTIPLIER;
 
@@ -75,6 +85,6 @@ export class ReportService {
     }
 
     private buildScore(score: number) {
-        return isNaN(score) ? 0 : score == MaturityLevelStatus.NAO_APLICAVEL ? MULTIPLIER : score;
+        return isNaN(score) ? 0 : score == MaturityLevelStatus.NOT_APPLICABLE ? MULTIPLIER : score;
     }
 }

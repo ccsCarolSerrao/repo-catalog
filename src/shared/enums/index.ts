@@ -1,13 +1,15 @@
 export enum RepoType {
     API = 'api',
     BATCH = 'batch',
+    WEBSITE = 'website',
+    INFRASTRUCTURE = 'infrastructure',
 }
 
 export enum MaturityLevelStatus {
-    NAO_APLICAVEL = -1,
-    NAO_ATENDE = 0,
-    ATENDE_PARCIALMENTE = 1,
-    ATENDE = 2,
+    NOT_APPLICABLE = -1,
+    NOT_MEET = 0,
+    PARTIALLY_MEET = 1,
+    MEET = 2,
 }
 
 export enum MaturityLevelFactor {
@@ -16,10 +18,10 @@ export enum MaturityLevelFactor {
     EXTERNALIZED_METRIC = 'externalizedMetric',
     AUTOMATED_DEPLOYMENT = 'automatedDeployment',
     CODE_COVERAGE = 'codeCoverage',
-    ZERO_DOWNTIME = 'zeroDowntime',
     ALARM = 'alarm',
     CODE_PARITY = 'codeParity',
     GRACEFUL_SHUTDOWN = 'gracefulShutdown',
     CIRCUITBREAKER = 'circuitBreaker',
     HEALTHCHECK = 'healthcheck',
+    DOCUMENTATION = 'documentation',
 }
