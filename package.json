@@ -24,6 +24,7 @@
         "typescript": "^4.5.2"
     },
     "dependencies": {
+        "@nestjs/swagger": "^5.2.0",
         "@octokit/request-error": "^2.1.0",
         "@octokit/rest": "^18.12.0",
         "class-transformer": "^0.5.1",
@@ -33,6 +34,7 @@
         "helmet": "^4.6.0",
         "js-yaml": "^4.1.0",
         "reflect-metadata": "^0.1.13",
+        "swagger-ui-express": "^4.3.0",
         "yaml": "^1.10.2"
     }
 }
